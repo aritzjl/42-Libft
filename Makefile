@@ -1,6 +1,6 @@
 # Nombre del archivo ejecutable y librería
-NAME = test_libft
-LIBFT = libft.a
+NAME = libft.a
+LIBFT = libftOut.a
 
 # Compilador y banderas
 CC = gcc

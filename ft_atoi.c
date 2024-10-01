@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arjaber- <arjaber-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aritz <aritz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 17:31:52 by arjaber-          #+#    #+#             */
-/*   Updated: 2024/09/25 18:38:39 by arjaber-         ###   ########.fr       */
+/*   Updated: 2024/09/30 10:50:30 by aritz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int	ft_result(const char *str, int i)
 {
 	int	result;
 
+	if (!ft_isdigit(str[i]))
+		return (0);
 	result = 0;
 	while (str[i] >= '0' && str[i] <= '9')
 		result = (result * 10) + (str[i++] - '0');
@@ -39,14 +41,16 @@ int	ft_atoi(const char *str)
 	int	negative;
 	int	result;
 
-	if (!str)
-		return (0);
 	i = skip_empty(str);
 	negative = 1;
-	if (str[i] == '-')
-		negative = -1;
-	if (negative == -1 || str[i] == '+')
-		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			negative = -1;
+		i++;	
+	}
+	if (!ft_isdigit(str[i]))
+		return (0);
 	result = ft_result(str, i) * negative;
 	return (result);
 }
