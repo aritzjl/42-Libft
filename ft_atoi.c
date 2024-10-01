@@ -6,7 +6,7 @@
 /*   By: aritz <aritz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 17:31:52 by arjaber-          #+#    #+#             */
-/*   Updated: 2024/09/30 10:50:30 by aritz            ###   ########.fr       */
+/*   Updated: 2024/09/30 10:51:34 by aritz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	ft_atoi(const char *str)
 	{
 		if (str[i] == '-')
 			negative = -1;
-		i++;	
+		i++;
 	}
 	if (!ft_isdigit(str[i]))
 		return (0);

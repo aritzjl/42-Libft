@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arjaber- <arjaber-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aritz <aritz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 16:56:23 by arjaber-          #+#    #+#             */
-/*   Updated: 2024/09/25 19:57:00 by arjaber-         ###   ########.fr       */
+/*   Updated: 2024/10/01 20:52:05 by aritz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,12 @@
 int		ft_atoi(const char *str);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+char    *ft_itoa(int n);
 
 // Operaciones de cadenas
-char	*ft_strjoin(char const *s1, char const *s2);
+char    **ft_split(char const *s, char c);
+char    *ft_strtrim(char const *s1, char const *set);
+char    *ft_strjoin(char const *s1, char const *s2);
 char	**ft_split(char const *s, char c);
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
