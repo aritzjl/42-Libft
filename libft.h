@@ -6,7 +6,7 @@
 /*   By: aritz <aritz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 16:56:23 by arjaber-          #+#    #+#             */
-/*   Updated: 2024/10/01 20:52:05 by aritz            ###   ########.fr       */
+/*   Updated: 2024/10/01 22:15:10 by aritz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stddef.h> // Para usar size_t
 # include <stdlib.h> // Malloc etc
+# include <unistd.h> // write
 
 // Prototipos de funciones
 
@@ -23,6 +24,16 @@ int		ft_atoi(const char *str);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 char    *ft_itoa(int n);
+
+// Funciones como argumentos
+char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void    ft_striteri(char *s, void (*f)(unsigned int, char*));
+
+// File descriptor
+void    ft_putchar_fd(char c, int fd);
+void    ft_putstr_fd(char *s, int fd);
+void    ft_putendl_fd(char *s, int fd);
+void    ft_putnbr_fd(int n, int fd);
 
 // Operaciones de cadenas
 char    **ft_split(char const *s, char c);
