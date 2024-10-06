@@ -6,23 +6,18 @@
 /*   By: aritz <aritz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 19:18:04 by arjaber-          #+#    #+#             */
-/*   Updated: 2024/09/30 10:36:19 by aritz            ###   ########.fr       */
+/*   Updated: 2024/10/06 19:43:58 by aritz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-unsigned char is used in memset to handle memory byte by byte
-uniformly, avoiding sign-related issues and ensuring consistent behavior
-across different platforms.
-*/
 void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*s_aux;
 	size_t			count;
 
-	s_aux = s;
+	s_aux = (unsigned char *)s;
 	count = 0;
 	while (count < n)
 	{

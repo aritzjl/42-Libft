@@ -6,19 +6,19 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_node;
 	t_list	*prev_node;
 
-	res = NULL;
-	new_node = NULL;
-	prev_node = NULL;
-	(void) del;
-	while (lst)
+	new_node = lst;
+	res = malloc(sizeof(t_list));
+	if (!res)
+		return (0);
+	prev_node = res;
+	while (new_node)
 	{
-		new_node = ft_lstnew(f(lst->content));
-		if (!res)
-			res = new_node;
-		else
-			prev_node->next = new_node;
-		prev_node = new_node;
-		lst = lst->next;
+		prev_node->content = f(new_node->content);
+		prev_node->next = malloc(sizeof(t_list));
+		if (!prev_node)
+			ft_lstclear(&new_node, del);
+		new_node = new_node->next;
+		prev_node = prev_node->next;
 	}
 	return (res);
 }

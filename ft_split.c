@@ -6,13 +6,13 @@
 /*   By: aritz <aritz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 15:37:16 by arjaber-          #+#    #+#             */
-/*   Updated: 2024/10/03 21:07:44 by aritz            ###   ########.fr       */
+/*   Updated: 2024/10/06 19:22:20 by aritz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	words_amt(char const *s, char c)
+static int	words_amt(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -33,7 +33,7 @@ int	words_amt(char const *s, char c)
 	return (count);
 }
 
-int	next_word_len(char const *s, int pos, char c)
+static int	next_word_len(char const *s, int pos, char c)
 {
 	int	len;
 
@@ -43,7 +43,7 @@ int	next_word_len(char const *s, int pos, char c)
 	return (len);
 }
 
-char	*get_substring(char const *s, int start, int len)
+static char	*get_substring(char const *s, int start, int len)
 {
 	char	*res;
 	int		i;

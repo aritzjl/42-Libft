@@ -1,7 +1,7 @@
 #include "libft.h"
 #include <stdio.h>
 
-int	digits_amount(int n)
+static int	digits_amount(int n)
 {
 	int	counter;
 
@@ -21,6 +21,17 @@ int	digits_amount(int n)
 	return (counter);
 }
 
+static int	is_zero(int n, char *res)
+{
+	if (n == 0)
+	{
+		res[0] = '0';
+		res[1] = '\0';
+		return (1);
+	}
+	return (0);
+}
+
 char	*ft_itoa(int n)
 {
 	char			*res;
@@ -32,8 +43,8 @@ char	*ft_itoa(int n)
 	if (!res)
 		return (NULL);
 	res[digit_len--] = '\0';
-	if (n == 0)
-		return ("0");
+	if (is_zero(n, res))
+		return (res);
 	num = n;
 	if (n < 0)
 	{

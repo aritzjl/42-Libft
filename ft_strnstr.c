@@ -3,30 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arjaber- <arjaber-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aritz <aritz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 16:34:40 by arjaber-          #+#    #+#             */
-/*   Updated: 2024/09/20 16:57:29 by arjaber-         ###   ########.fr       */
+/*   Updated: 2024/10/06 20:02:38 by aritz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_is_substring(size_t pos, const char *big, const char *little, size_t len)
+static int	ft_is_substring(size_t p, const char *b, const char *lit, size_t n)
 {
 	size_t	substring_pos;
 
 	substring_pos = 0;
-	while (big[pos + substring_pos] && little[substring_pos]
-		&& (pos + substring_pos < len))
+	while (b[p + substring_pos] && lit[substring_pos]
+		&& (p + substring_pos < n))
 	{
-		if (big[pos + substring_pos] != little[substring_pos])
+		if (b[p + substring_pos] != lit[substring_pos])
 		{
 			return (0);
 		}
 		substring_pos++;
 	}
-	return (little[substring_pos] == '\0');
+	return (lit[substring_pos] == '\0');
 }
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)

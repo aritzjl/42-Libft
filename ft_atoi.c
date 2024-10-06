@@ -6,13 +6,13 @@
 /*   By: aritz <aritz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 17:31:52 by arjaber-          #+#    #+#             */
-/*   Updated: 2024/09/30 10:51:34 by aritz            ###   ########.fr       */
+/*   Updated: 2024/10/06 19:21:04 by aritz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	skip_empty(const char *str)
+static int	skip_empty(const char *str)
 {
 	int	i;
 
@@ -23,7 +23,7 @@ int	skip_empty(const char *str)
 	return (i);
 }
 
-int	ft_result(const char *str, int i)
+static int	ft_result(const char *str, int i)
 {
 	int	result;
 
