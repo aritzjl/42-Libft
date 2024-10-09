@@ -1,5 +1,5 @@
 NAME = libft.a
-CC = gcc
+CC = cc
 CFLAG = -Wall -Werror -Wextra
 SRC_FILES = ft_atoi.c \
 			ft_bzero.c \
@@ -59,6 +59,9 @@ all: $(NAME)
 
 bonus: $(OBJS) $(BONUS_OBJS)
 	$(LIBC) $(NAME) $(OBJS) $(BONUS_OBJS)
+
+bonus_clean:
+	rm -f $(BONUS_OBJS)
 
 $(NAME): $(OBJS)
 	$(LIBC) $(NAME) $(OBJS)
