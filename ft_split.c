@@ -6,7 +6,7 @@
 /*   By: aritz <aritz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 15:37:16 by arjaber-          #+#    #+#             */
-/*   Updated: 2024/10/06 19:22:20 by aritz            ###   ########.fr       */
+/*   Updated: 2024/10/09 08:37:49 by aritz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,16 @@ static char	*get_substring(char const *s, int start, int len)
 	return (res);
 }
 
+static char	**free_all(char **res, int j)
+{
+	while (j >= 0)
+	{
+		free(res[j]);
+		j--;
+	}
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		i;
@@ -82,7 +92,7 @@ char	**ft_split(char const *s, char c)
 		len = next_word_len(s, i, c);
 		res[j] = get_substring(s, i, len);
 		if (!res[j])
-			return (NULL);
+			return (free_all(res, j - 1));
 		i += len;
 		j++;
 	}
