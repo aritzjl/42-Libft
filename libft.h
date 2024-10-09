@@ -6,16 +6,16 @@
 /*   By: aritz <aritz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 16:56:23 by arjaber-          #+#    #+#             */
-/*   Updated: 2024/10/04 20:41:44 by aritz            ###   ########.fr       */
+/*   Updated: 2024/10/09 08:47:43 by aritz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stddef.h> // Para usar size_t
-# include <stdlib.h> // Malloc etc
-# include <unistd.h> // write
+# include <stddef.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {

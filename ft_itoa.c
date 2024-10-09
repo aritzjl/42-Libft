@@ -1,5 +1,4 @@
 #include "libft.h"
-#include <stdio.h>
 
 static int	digits_amount(int n)
 {
